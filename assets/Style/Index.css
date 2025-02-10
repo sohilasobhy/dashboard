@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Rubik", serif;
+  src: url("../Fonts/Rubik/Rubik-VariableFont_wght.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+li,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Rubik", serif;
+  background-color: #f8fafb;
+}
+body .mainMenu {
+  min-height: 100vh;
+  border-right: 1px #e8ecef solid;
+  transition: 0.5s;
+}
+body .mainMenu .nav-link {
+  cursor: pointer;
+  padding: 1.5rem !important;
+}
+body .mainMenu .nav-link.active {
+  background-color: #f8fafb;
+  border-left: 2px solid #4d7cfe;
+}
+body .mainMenu .nav-link p {
+  color: #778ca2;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  body .mainMenu .nav-link p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .mainMenu .nav-link p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  body .mainMenu .nav-link p {
+    font-size: 10px;
+  }
+}
+body .mainMenu.sideMenu {
+  width: 230px;
+}
+body .mainMenu.sideMenu .oneItem {
+  gap: 1rem;
+}
+body .mainMenu.sideMenu .logo .logo-sm {
+  display: none;
+}
+body .mainMenu.sideMenuClose {
+  width: 70px;
+  overflow: hidden;
+}
+body .mainMenu.sideMenuClose .oneItem {
+  gap: 2.5rem;
+}
+body .mainMenu.sideMenuClose .logo .logo-lg {
+  display: none;
+}
+body .navIcon {
+  cursor: pointer;
+}
+body .sideNav {
+  border-bottom: 1px #e8ecef solid;
+}
+body .sideNav p {
+  color: #252631;
+  font-size: 20px;
+  font-weight: 400;
+}
+body .sideNav .inputCon input {
+  background-color: transparent;
+  border: none;
+}
+body .sideNav .inputCon input::-moz-placeholder {
+  color: #778ca2;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .sideNav .inputCon input::placeholder {
+  color: #778ca2;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .sideNav .inputCon img {
+  position: absolute;
+  top: 16%;
+  left: 12px;
+}
+body .messages {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: absolute;
+  top: 10.5%;
+}
+@media (min-width: 992px) {
+  body .messages {
+    right: 125px;
+    width: 320px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .messages {
+    right: 120px;
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  body .messages {
+    right: 95px;
+    width: 250px;
+  }
+}
+body .messages i {
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  top: -8%;
+  right: 4%;
+}
+body .messages .oneMessage {
+  cursor: pointer;
+}
+body .messages .oneMessage .name {
+  font-size: 14px;
+  font-weight: 400;
+}
+body .messages .oneMessage .messageContent {
+  color: #98a9bc;
+  font-size: 14px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .messages .oneMessage img {
+  width: 35px;
+  height: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+body .messages .oneMessage.read .name {
+  color: #1b1e24;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .messages .oneMessage.unread {
+  background-color: #f8fafb;
+}
+body .messages .oneMessage.unread .name {
+  color: #4d7cfe;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .messages .allMessages {
+  color: #5784fd;
+  background-color: #f8fafb;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+body footer p {
+  color: #98a9bc;
+  font-size: 14px;
+  font-weight: 400;
+}/*# sourceMappingURL=Index.css.map */
