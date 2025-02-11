@@ -1,14 +1,17 @@
+let sideNavOpen = true;
 document.getElementById("menuBtn").addEventListener('click', function () {
     const menu = document.getElementById('mainMenu');
-    menu.classList.toggle('sideMenuClose');
-    menu.classList.toggle('sideMenu');
+    const rightPart = document.getElementById('rightPart')
+    if (menu.classList.contains("sideMenuClose")) {
+        menu.classList.remove('sideMenuClose');
+        menu.classList.add('sideMenu');
+        rightPart.classList.add('sideNavOpen')
+        rightPart.classList.remove('sideNavClose')
+    } else {
+        menu.classList.add('sideMenuClose');
+        menu.classList.remove('sideMenu');
+        rightPart.classList.remove('sideNavOpen')
+        rightPart.classList.add('sideNavClose')
+    }
 });
-document.getElementById("messageBtn").addEventListener('click', function (event) {
-    event.stopPropagation();
-    const messages = document.getElementById('messages');
-    messages.classList.toggle('d-none');
-});
-document.body.addEventListener('click', function () {
-    const messages = document.getElementById('messages');
-    messages.classList.add('d-none');
-});
+

@@ -1,5 +1,6 @@
 @import "_Fonts";
 @import "_Mixins";
+@import "_Variables";
 * {
   padding: 0;
   margin: 0;
@@ -22,17 +23,36 @@ ul {
 
 body {
   font-family: "Rubik", serif;
-  background-color: #f8fafb;
+  background-color: $primary-color;
   .mainMenu {
     min-height: 100vh;
-    border-right: 1px #e8ecef solid;
+    border-right: 1px $border-color solid;
     transition: 0.5s;
+    @include position(fixed, 0, null, null, 0);
     .nav-link {
       cursor: pointer;
       padding: 1.5rem !important;
+      svg {
+        path {
+          fill: #778ca2;
+        }
+      }
       &.active {
-        background-color: #f8fafb;
-        border-left: 2px solid #4d7cfe;
+        background-color: $primary-color;
+        border-left: 2px solid $prim-text-color;
+        svg {
+          path {
+            fill: $prim-text-color;
+          }
+        }
+      }
+      &:hover {
+        background-color: $primary-color;
+        svg {
+          path {
+            fill: $prim-text-color;
+          }
+        }
       }
       p {
         @include text-style($weight: 500, $size: null);
@@ -63,6 +83,9 @@ body {
       overflow: hidden;
       .oneItem {
         gap: 2.5rem;
+        p {
+          display: none;
+        }
       }
       .logo {
         .logo-lg {
@@ -74,87 +97,115 @@ body {
   .navIcon {
     cursor: pointer;
   }
-  .sideNav {
-    border-bottom: 1px #e8ecef solid;
-    p {
-      @include text-style(#252631, 20px);
+  .rightPart {
+    @include position(absolute, 0, 0, null, null);
+    transition: 0.5s;
+    &.sideNavOpen {
+      width: calc(100% - 230px);
     }
-    .inputCon {
-      input {
+    &.sideNavClose {
+      width: calc(100% - 70px);
+    }
+    .sideNav {
+      border-bottom: 1px $border-color solid;
+      height: 10vh;
+      p {
+        @include text-style(#252631, 20px);
+      }
+      button {
+        border: 0;
         background-color: transparent;
-        border: none;
-        &::placeholder {
-          @include text-style();
+        &:focus {
+          border: 0;
+        }
+        &::after {
+          display: none;
         }
       }
-      img {
-        @include position(absolute, 16%, null, null, 12px);
-      }
-    }
-  }
-  .messages {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    @include position(absolute, 10.5%, null, null, null);
-    @media (min-width: 992px) {
-      @include position(null, null, 125px, null, null);
-      width: 320px;
-    }
-    @media (max-width: 991.86px) and (min-width: 768px) {
-      @include position(null, null, 120px, null, null);
-      width: 300px;
-    }
-    @media (max-width: 768px) {
-      @include position(null, null, 95px, null, null);
-      width: 250px;
-    }
-    i {
-      color: white;
-      font-size: 35px;
-      @include position(absolute, -8%, 4%, null, null);
-    }
-    .oneMessage {
-      cursor: pointer;
-      .name {
-        @include text-style($color: null);
-      }
-      .messageContent {
-        @include text-style($color: #98a9bc);
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      img {
-        width: 35px;
-        height: 35px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-      &.read {
-        .name {
-          @include text-style($color: #1b1e24);
+      .inputCon {
+        input {
+          background-color: transparent;
+          border: none;
+          &::placeholder {
+            @include text-style();
+          }
+          &:focus {
+            outline: 0;
+          }
         }
-      }
-      &.unread {
-        background-color: #f8fafb;
-        .name {
-          @include text-style($color: #4d7cfe);
+        img {
+          @include position(absolute, 16%, null, null, 12px);
         }
       }
     }
-    .allMessages {
-      color: #5784fd;
-      background-color: #f8fafb;
+    .messages {
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      cursor: pointer;
+      border: 0;
+      inset: 27px -15px auto auto !important;
+      @media (min-width: 992px) {
+        width: 320px;
+      }
+      @media (max-width: 991.86px) and (min-width: 768px) {
+        width: 300px;
+      }
+      @media (max-width: 768px) {
+        width: 250px;
+      }
+      i {
+        color: white;
+        font-size: 35px;
+        @include position(absolute, -8%, 4%, null, null);
+      }
+      .oneMessage {
+        cursor: pointer;
+        .name {
+          @include text-style($color: null);
+        }
+        .messageContent {
+          @include text-style($color: $secondry-text-color);
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        &.read {
+          .name {
+            @include text-style($color: #1b1e24);
+          }
+        }
+        &.unread,
+        &:hover {
+          background-color: $primary-color;
+          .name {
+            @include text-style($color: $prim-text-color);
+          }
+        }
+      }
+      .allMessages {
+        color: $prim-text-color;
+        background-color: $primary-color;
+        border-radius: 10px;
+        cursor: pointer;
+      }
     }
-  }
-  footer {
-    @include position(absolute, null, 0, 0, null);
-    p {
-      @include text-style($color: #98a9bc);
+    .tasksSection {
+      height: 83vh;
+      overflow-y: scroll;
+    }
+    footer {
+      width: 100%;
+      height: 7vh;
+      p {
+        @include text-style($color: $secondry-text-color);
+      }
     }
   }
 }

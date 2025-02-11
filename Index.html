@@ -1,138 +1,546 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/Style/Index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/Style/Index.css" />
     <title>Dashboard</title>
-</head>
-<body class="d-flex">
-    <div class="mainMenu sideMenu bg-white flex-shrink-0" id="mainMenu">
-        <div class=" d-flex justify-content-center logo py-4">
-            <img src="assets/Images/Logo.png" alt="logo" class="logo-lg">
-            <img src="assets/Images/ioTASK.png" alt="logo" class="logo-sm">
+  </head>
+  <body>
+    <div class="mainMenu sideMenu bg-white" id="mainMenu">
+      <div class="d-flex justify-content-center logo py-4">
+        <img src="assets/Images/Logo.png" alt="logo" class="logo-lg" />
+        <img src="assets/Images/ioTASK.png" alt="logo" class="logo-sm" />
+      </div>
+      <nav class="navbar navbar-expand flex-wrap menuItems">
+        <div class="container-fluid flex-column p-0">
+          <div
+            class="collapse navbar-collapse flex-column w-100"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav flex-column w-100">
+              <li class="nav-item">
+                <div
+                  class="nav-link active d-flex align-items-center oneItem"
+                  aria-current="page"
+                  href="#"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.15625 2.94922C4.78906 1.31641 6.73698 0.5 9 0.5C11.263 0.5 13.1966 1.31641 14.8008 2.94922C16.4336 4.55339 17.25 6.48698 17.25 8.75C17.25 11.013 16.4336 12.9609 14.8008 14.5938C13.1966 16.1979 11.263 17 9 17C6.73698 17 4.78906 16.1979 3.15625 14.5938C1.55208 12.9609 0.75 11.013 0.75 8.75C0.75 6.48698 1.55208 4.55339 3.15625 2.94922ZM13.8555 3.89453C12.5091 2.54818 10.8906 1.875 9 1.875C7.10938 1.875 5.49089 2.54818 4.14453 3.89453C2.79818 5.24089 2.125 6.85938 2.125 8.75C2.125 10.6406 2.79818 12.2591 4.14453 13.6055C5.49089 14.9518 7.10938 15.625 9 15.625C10.8906 15.625 12.5091 14.9518 13.8555 13.6055C15.2018 12.2591 15.875 10.6406 15.875 8.75C15.875 6.85938 15.2018 5.24089 13.8555 3.89453ZM8.48438 2.77734C8.6276 2.63411 8.79948 2.5625 9 2.5625C9.20052 2.5625 9.35807 2.63411 9.47266 2.77734C9.61589 2.89193 9.6875 3.04948 9.6875 3.25C9.6875 3.45052 9.61589 3.6224 9.47266 3.76562C9.35807 3.88021 9.20052 3.9375 9 3.9375C8.79948 3.9375 8.6276 3.88021 8.48438 3.76562C8.36979 3.6224 8.3125 3.45052 8.3125 3.25C8.3125 3.04948 8.36979 2.89193 8.48438 2.77734ZM4.61719 4.41016C4.76042 4.26693 4.91797 4.19531 5.08984 4.19531C5.29036 4.19531 5.46224 4.26693 5.60547 4.41016C5.7487 4.52474 5.82031 4.68229 5.82031 4.88281C5.82031 5.05469 5.7487 5.21224 5.60547 5.35547C5.46224 5.4987 5.29036 5.57031 5.08984 5.57031C4.91797 5.57031 4.76042 5.4987 4.61719 5.35547C4.5026 5.21224 4.44531 5.05469 4.44531 4.88281C4.44531 4.68229 4.5026 4.52474 4.61719 4.41016ZM12.3945 4.36719L13.3828 5.35547L10.332 8.40625C10.3607 8.52083 10.375 8.63542 10.375 8.75C10.375 9.1224 10.2318 9.45182 9.94531 9.73828C9.6875 9.99609 9.3724 10.125 9 10.125C8.6276 10.125 8.29818 9.99609 8.01172 9.73828C7.75391 9.45182 7.625 9.1224 7.625 8.75C7.625 8.3776 7.75391 8.0625 8.01172 7.80469C8.29818 7.51823 8.6276 7.375 9 7.375C9.11458 7.375 9.22917 7.38932 9.34375 7.41797L12.3945 4.36719ZM2.98438 8.27734C3.1276 8.13411 3.29948 8.0625 3.5 8.0625C3.70052 8.0625 3.85807 8.13411 3.97266 8.27734C4.11589 8.39193 4.1875 8.54948 4.1875 8.75C4.1875 8.95052 4.11589 9.1224 3.97266 9.26562C3.85807 9.38021 3.70052 9.4375 3.5 9.4375C3.29948 9.4375 3.1276 9.38021 2.98438 9.26562C2.86979 9.1224 2.8125 8.95052 2.8125 8.75C2.8125 8.54948 2.86979 8.39193 2.98438 8.27734ZM13.9844 8.27734C14.1276 8.13411 14.2995 8.0625 14.5 8.0625C14.7005 8.0625 14.8581 8.13411 14.9727 8.27734C15.1159 8.39193 15.1875 8.54948 15.1875 8.75C15.1875 8.95052 15.1159 9.1224 14.9727 9.26562C14.8581 9.38021 14.7005 9.4375 14.5 9.4375C14.2995 9.4375 14.1276 9.38021 13.9844 9.26562C13.8698 9.1224 13.8125 8.95052 13.8125 8.75C13.8125 8.54948 13.8698 8.39193 13.9844 8.27734ZM4.61719 12.1445C4.76042 12.0013 4.91797 11.9297 5.08984 11.9297C5.29036 11.9297 5.46224 12.0013 5.60547 12.1445C5.7487 12.2878 5.82031 12.4596 5.82031 12.6602C5.82031 12.832 5.7487 12.9896 5.60547 13.1328C5.46224 13.2474 5.29036 13.3047 5.08984 13.3047C4.91797 13.3047 4.76042 13.2474 4.61719 13.1328C4.5026 12.9896 4.44531 12.832 4.44531 12.6602C4.44531 12.4596 4.5026 12.2878 4.61719 12.1445ZM12.3945 12.1445C12.5378 12.0013 12.6953 11.9297 12.8672 11.9297C13.0677 11.9297 13.2253 12.0013 13.3398 12.1445C13.4831 12.2878 13.5547 12.4596 13.5547 12.6602C13.5547 12.832 13.4831 12.9896 13.3398 13.1328C13.2253 13.2474 13.0677 13.3047 12.8672 13.3047C12.6953 13.3047 12.5378 13.2474 12.3945 13.1328C12.2513 12.9896 12.1797 12.832 12.1797 12.6602C12.1797 12.4596 12.2513 12.2878 12.3945 12.1445Z"
+                    />
+                  </svg>
+                  <p>DASHBOARD</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.625 0.8125H10.375C10.7474 0.8125 11.0625 0.955729 11.3203 1.24219C11.6068 1.5 11.75 1.8151 11.75 2.1875V2.875H13.8125V2.1875H15.1875V2.875H16.5625C16.9349 2.875 17.25 3.01823 17.5078 3.30469C17.7943 3.5625 17.9375 3.8776 17.9375 4.25V15.25C17.9375 15.6224 17.7943 15.9518 17.5078 16.2383C17.25 16.4961 16.9349 16.625 16.5625 16.625H1.4375C1.0651 16.625 0.735677 16.4961 0.449219 16.2383C0.191406 15.9518 0.0625 15.6224 0.0625 15.25V4.25C0.0625 3.8776 0.191406 3.5625 0.449219 3.30469C0.735677 3.01823 1.0651 2.875 1.4375 2.875H2.8125V2.1875H4.1875V2.875H6.25V2.1875C6.25 1.8151 6.37891 1.5 6.63672 1.24219C6.92318 0.955729 7.2526 0.8125 7.625 0.8125ZM7.625 2.1875V2.875H10.375V2.1875H7.625ZM1.4375 4.25V15.25H2.8125V4.9375H4.1875V15.25H13.8125V4.9375H15.1875V15.25H16.5625V4.25H1.4375Z"
+                    />
+                  </svg>
+                  <p>PROJECTS</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="16"
+                    viewBox="0 0 18 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.04688 0.359375L6.07812 1.39062L3.32812 4.14062L2.8125 4.57031L2.29688 4.14062L0.921875 2.76562L1.95312 1.73438L2.8125 2.63672L5.04688 0.359375ZM8.3125 1.5625H17.25V2.9375H8.3125V1.5625ZM5.04688 5.85938L6.07812 6.89062L3.32812 9.64062L2.8125 10.0703L2.29688 9.64062L0.921875 8.26562L1.95312 7.23438L2.8125 8.13672L5.04688 5.85938ZM8.3125 7.0625H17.25V8.4375H8.3125V7.0625ZM5.04688 11.3594L6.07812 12.3906L3.32812 15.1406L2.8125 15.5703L2.29688 15.1406L0.921875 13.7656L1.95312 12.7344L2.8125 13.6367L5.04688 11.3594ZM8.3125 12.5625H17.25V13.9375H8.3125V12.5625Z"
+                    />
+                  </svg>
+                  <p>TASKS</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="15"
+                    viewBox="0 0 18 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.75 0.875H1.4375H16.5625H17.25V1.5625V13.9375V14.625H16.5625H1.4375H0.75V13.9375V1.5625V0.875ZM2.125 2.25V5H5.5625V2.25H2.125ZM6.9375 2.25V5H15.875V2.25H6.9375ZM2.125 6.375V9.125H5.5625V6.375H2.125ZM6.9375 6.375V9.125H15.875V6.375H6.9375ZM2.125 10.5V13.25H5.5625V10.5H2.125ZM6.9375 10.5V13.25H15.875V10.5H6.9375Z"
+                    />
+                  </svg>
+                  <p>KANBAN DESK</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.1875 0.5H4.5625V1.1875H11.4375V0.5H12.8125V1.1875H14.875H15.5625V1.875V15.625V16.3125H14.875H1.125H0.4375V15.625V1.875V1.1875H1.125H3.1875V0.5ZM1.8125 2.5625V3.9375H14.1875V2.5625H12.8125V3.25H11.4375V2.5625H4.5625V3.25H3.1875V2.5625H1.8125ZM1.8125 5.3125V14.9375H14.1875V5.3125H1.8125ZM5.9375 6.6875H7.3125V8.0625H5.9375V6.6875ZM8.6875 6.6875H10.0625V8.0625H8.6875V6.6875ZM11.4375 6.6875H12.8125V8.0625H11.4375V6.6875ZM3.1875 9.4375H4.5625V10.8125H3.1875V9.4375ZM5.9375 9.4375H7.3125V10.8125H5.9375V9.4375ZM8.6875 9.4375H10.0625V10.8125H8.6875V9.4375ZM11.4375 9.4375H12.8125V10.8125H11.4375V9.4375ZM3.1875 12.1875H4.5625V13.5625H3.1875V12.1875ZM5.9375 12.1875H7.3125V13.5625H5.9375V12.1875ZM8.6875 12.1875H10.0625V13.5625H8.6875V12.1875Z"
+                    />
+                  </svg>
+                  <p>CALENDER</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M10.4609 0.5H10.8906L11.0625 0.84375L11.707 1.96094C13.1966 2.13281 14.4427 2.8776 15.4453 4.19531C17.1068 6.42969 17.9375 10.0104 17.9375 14.9375V15.625H17.25H11.3203C10.5755 16.0833 9.80208 16.3125 9 16.3125C8.19792 16.3125 7.42448 16.0833 6.67969 15.625H0.75H0.0625V14.9375C0.0625 9.23698 1.20833 5.24089 3.5 2.94922C5.10417 1.31641 7.42448 0.5 10.4609 0.5ZM10.0742 1.91797C7.58203 1.97526 5.70573 2.64844 4.44531 3.9375C2.55469 5.82812 1.56641 9.26562 1.48047 14.25H5.21875C5.13281 14.1641 5.04688 14.0495 4.96094 13.9062C3.98698 12.5312 3.5 11.0417 3.5 9.4375C3.5 8.86458 3.64323 8.39193 3.92969 8.01953C4.1875 7.67578 4.54557 7.41797 5.00391 7.24609C5.46224 7.07422 6.30729 6.93099 7.53906 6.81641C8.6276 6.73047 9.34375 6.60156 9.6875 6.42969C9.94531 6.3151 10.1172 6.1862 10.2031 6.04297C10.3177 5.89974 10.375 5.65625 10.375 5.3125H11.75C11.75 6.42969 11.263 7.21745 10.2891 7.67578C9.74479 7.93359 8.88542 8.10547 7.71094 8.19141C6.59375 8.27734 5.86328 8.39193 5.51953 8.53516C5.29036 8.62109 5.13281 8.72135 5.04688 8.83594C4.93229 8.97917 4.875 9.17969 4.875 9.4375C4.875 10.7552 5.27604 11.987 6.07812 13.1328C6.90885 14.3359 7.88281 14.9375 9 14.9375C10.1172 14.9375 11.0911 14.3359 11.9219 13.1328C12.724 12.0156 13.125 10.7839 13.125 9.4375H14.5C14.5 11.0417 14.013 12.5456 13.0391 13.9492C12.9245 14.1211 12.8529 14.2214 12.8242 14.25H16.5195C16.4336 9.92448 15.7031 6.85938 14.3281 5.05469C13.4401 3.85156 12.4089 3.25 11.2344 3.25H10.8047L10.6328 2.90625L10.0742 1.91797ZM6.42188 9.65234C6.5651 9.50911 6.73698 9.4375 6.9375 9.4375C7.13802 9.4375 7.29557 9.50911 7.41016 9.65234C7.55339 9.76693 7.625 9.92448 7.625 10.125C7.625 10.3255 7.55339 10.4974 7.41016 10.6406C7.29557 10.7552 7.13802 10.8125 6.9375 10.8125C6.73698 10.8125 6.5651 10.7552 6.42188 10.6406C6.30729 10.4974 6.25 10.3255 6.25 10.125C6.25 9.92448 6.30729 9.76693 6.42188 9.65234ZM10.5469 9.65234C10.6901 9.50911 10.862 9.4375 11.0625 9.4375C11.263 9.4375 11.4206 9.50911 11.5352 9.65234C11.6784 9.76693 11.75 9.92448 11.75 10.125C11.75 10.3255 11.6784 10.4974 11.5352 10.6406C11.4206 10.7552 11.263 10.8125 11.0625 10.8125C10.862 10.8125 10.6901 10.7552 10.5469 10.6406C10.4323 10.4974 10.375 10.3255 10.375 10.125C10.375 9.92448 10.4323 9.76693 10.5469 9.65234Z"
+                    />
+                  </svg>
+                  <p>CONTACTS</p>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link d-flex align-items-center oneItem py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="19"
+                    viewBox="0 0 17 19"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.71094 1.62891C8.25521 1.08464 8.91406 0.8125 9.6875 0.8125C10.4609 0.8125 11.1055 1.08464 11.6211 1.62891C12.1654 2.14453 12.4375 2.78906 12.4375 3.5625H15.875H16.5625V4.25V7.6875V8.375H15.875H15.1875C14.7865 8.375 14.457 8.50391 14.1992 8.76172C13.9414 9.01953 13.8125 9.34896 13.8125 9.75C13.8125 10.151 13.9414 10.4805 14.1992 10.7383C14.457 10.9961 14.7865 11.125 15.1875 11.125H15.875H16.5625V11.8125V15.25V15.9375H15.875H12.4375C12.4375 16.7109 12.1654 17.3698 11.6211 17.9141C11.1055 18.4297 10.4609 18.6875 9.6875 18.6875C8.91406 18.6875 8.25521 18.4297 7.71094 17.9141C7.19531 17.3698 6.9375 16.7109 6.9375 15.9375H3.5H2.8125V15.25V12.5C2.03906 12.5 1.38021 12.2422 0.835938 11.7266C0.320312 11.1823 0.0625 10.5234 0.0625 9.75C0.0625 8.97656 0.320312 8.33203 0.835938 7.81641C1.38021 7.27214 2.03906 7 2.8125 7V4.25V3.5625H3.5H6.9375C6.9375 2.78906 7.19531 2.14453 7.71094 1.62891ZM10.6758 2.57422C10.418 2.31641 10.0885 2.1875 9.6875 2.1875C9.28646 2.1875 8.95703 2.31641 8.69922 2.57422C8.44141 2.83203 8.3125 3.16146 8.3125 3.5625V4.25V4.9375H7.625H4.1875V7.6875V8.375H3.5H2.8125C2.41146 8.375 2.08203 8.50391 1.82422 8.76172C1.56641 9.01953 1.4375 9.34896 1.4375 9.75C1.4375 10.151 1.56641 10.4805 1.82422 10.7383C2.08203 10.9961 2.41146 11.125 2.8125 11.125H3.5H4.1875V11.8125V14.5625H7.625H8.3125V15.25V15.9375C8.3125 16.3385 8.44141 16.668 8.69922 16.9258C8.95703 17.1836 9.28646 17.3125 9.6875 17.3125C10.0885 17.3125 10.418 17.1836 10.6758 16.9258C10.9336 16.668 11.0625 16.3385 11.0625 15.9375V15.25V14.5625H11.75H15.1875V12.5C14.4141 12.5 13.7552 12.2422 13.2109 11.7266C12.6953 11.1823 12.4375 10.5234 12.4375 9.75C12.4375 8.97656 12.6953 8.33203 13.2109 7.81641C13.7552 7.27214 14.4141 7 15.1875 7V4.9375H11.75H11.0625V4.25V3.5625C11.0625 3.16146 10.9336 2.83203 10.6758 2.57422Z"
+                    />
+                  </svg>
+                  <p>UI KIT</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav class="navbar navbar-expand flex-wrap menuItems">
-            <div class="container-fluid flex-column p-0">
-              <div class="collapse navbar-collapse flex-column w-100" id="navbarNav">
-                <ul class="navbar-nav flex-column w-100">
-                  <li class="nav-item">
-                    <div class="nav-link active d-flex align-items-center oneItem" aria-current="page" href="#">
-                        <img src="assets/Images/ico.png" alt="dashboard icon">
-                        <p>DASHBOARD</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico2.png" alt="PROJECTS icon">
-                          <p>PROJECTS</p>
-                        </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico3.png" alt="TASKS icon">
-                          <p>TASKS</p>
-                        </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico7.png" alt="kanban desk icon">
-                          <p>KANBAN DESK</p>
-                        </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico4.png" alt="Calendar icon">
-                          <p>CALENDER</p>
-                        </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico5.png" alt="Contacts icon">
-                          <p>CONTACTS</p>
-                        </div>
-                  </li>
-                  <li class="nav-item">
-                      <div class="nav-link  d-flex align-items-center oneItem py-3">
-                          <img src="assets/Images/ico6.png" alt="UI Kit icon">
-                          <p>UI KIT</p>
-                        </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+      </nav>
     </div>
-    <div class="flex-grow-1 position-relative">
-        <div class="messages bg-white d-none" id="messages" onclick="event.stopPropagation()">
-            <i class="bi bi-triangle-fill"></i>
-            <div class="py-3">
-                <div class="oneMessage d-flex align-items-center gap-3 px-3 read">
-                    <img src="assets/Images/Img.png" alt="userImg">
-                    <div class="info">
-                        <p class="name">Sally Castro</p>
-                        <p class="messageContent">How many free autoresponders have</p>
-                    </div>
-                </div>
-                <div class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read">
-                    <img src="assets/Images/Img2.png" alt="userImg">
-                    <div class="info">
-                        <p class="name">Ada Mendez</p>
-                        <p class="messageContent">Another title for this article can be</p>
-                    </div>
-                </div>
-                <div class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 unread">
-                    <img src="assets/Images/Img3.png" alt="userImg">
-                    <div class="info">
-                        <p class="name">Jeremiah Mann</p>
-                        <p class="messageContent">What makes one logo better than</p>
-                    </div>
-                </div>
-                <div class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read">
-                    <img src="assets/Images/Img4.png" alt="userImg">
-                    <div class="info">
-                        <p class="name"> Hulda Warner</p>
-                        <p class="messageContent">Adwords Keyword research</p>
-                    </div>
-                </div>
-                <div class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read">
-                    <img src="assets/Images/Img5.png" alt="userImg">
-                    <div class="info">
-                        <p class="name">Barry Armstrong</p>
-                        <p class="messageContent">I have been questioned many people</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-3 d-flex justify-content-center p-2 allMessages">
-               <p>
-                   All Messages
-               </p>
-            </div>
+    <div class="rightPart sideNavOpen" id="rightPart">
+      <div
+        class="p-3 d-flex align-items-center justify-content-between bg-white sideNav"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="13"
+            viewBox="0 0 18 13"
+            fill="none"
+            class="navIcon"
+            id="menuBtn"
+          >
+            <path
+              d="M0.75 0.5625H17.25V1.9375H0.75V0.5625ZM0.75 6.0625H17.25V7.4375H0.75V6.0625ZM0.75 11.5625H17.25V12.9375H0.75V11.5625Z"
+              fill="#778CA2"
+            />
+          </svg>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="19"
+              viewBox="0 0 18 19"
+              fill="none"
+              class="navIcon d-lg-block d-none"
+            >
+              <path
+                d="M2.68359 3.43359C4.43099 1.6862 6.53646 0.8125 9 0.8125C11.4635 0.8125 13.569 1.6862 15.3164 3.43359C17.0638 5.18099 17.9375 7.28646 17.9375 9.75C17.9375 12.2135 17.0638 14.319 15.3164 16.0664C13.569 17.8138 11.4635 18.6875 9 18.6875C6.53646 18.6875 4.43099 17.8138 2.68359 16.0664C0.936198 14.319 0.0625 12.2135 0.0625 9.75C0.0625 7.28646 0.936198 5.18099 2.68359 3.43359ZM14.3281 4.42188C12.8672 2.93229 11.0911 2.1875 9 2.1875C6.90885 2.1875 5.11849 2.93229 3.62891 4.42188C2.16797 5.88281 1.4375 7.65885 1.4375 9.75C1.4375 11.8411 2.16797 13.6315 3.62891 15.1211C5.11849 16.582 6.90885 17.3125 9 17.3125C11.0911 17.3125 12.8672 16.582 14.3281 15.1211C15.8177 13.6315 16.5625 11.8411 16.5625 9.75C16.5625 7.65885 15.8177 5.88281 14.3281 4.42188ZM8.3125 5.625H9.6875V9.0625H13.125V10.4375H9.6875V13.875H8.3125V10.4375H4.875V9.0625H8.3125V5.625Z"
+                fill="#778CA2"
+              />
+            </svg>
+          </a>
+          <p class="d-lg-block d-none">Dashboard</p>
         </div>
-        <div class="p-3 d-flex align-items-center justify-content-between bg-white sideNav">
-            <div class=" d-flex align-items-center gap-3">
-                <img src="assets/Images/Menu.png" alt="menu icon" class="navIcon" id="menuBtn">
-                <img src="assets/Images/Add.png" alt="add icon" class="navIcon d-md-block d-none">
-                <p class="d-md-block d-none">Dashboard</p>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-                <div class="inputCon position-relative d-lg-block d-none">
-                    <img src="assets/Images/search ico.png" alt="search icon">
-                    <input type="search" placeholder="Search for task and etc" class="ps-5">
+        <div class="d-flex align-items-center gap-3">
+          <div class="inputCon position-relative d-lg-block d-none">
+            <img src="assets/Images/search ico.png" alt="search icon" />
+            <input
+              type="search"
+              placeholder="Search for task and etc"
+              class="ps-5"
+            />
+          </div>
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                class="navIcon"
+                id="messageBtn"
+              >
+                <g clip-path="url(#clip0_14_599)">
+                  <path
+                    d="M1.375 5.1875H2.0625H14.4375H15.125V5.875V15.5V16.1875H14.4375H8.50781L5.24219 18.7656L4.125 19.7109V18.25V16.1875H2.0625H1.375V15.5V5.875V5.1875ZM2.75 6.5625V14.8125H4.8125H5.5V15.5V16.7891L7.82031 14.9844L7.99219 14.8125H8.25H13.75V6.5625H2.75ZM16.5 7.9375H20.625V18.9375H17.875V22.4609L13.4922 18.9375H7.13281L8.85156 17.5625H14.0078L16.5 19.5391V17.5625H19.25V9.3125H16.5V7.9375Z"
+                    fill="#4D7CFE"
+                  />
+                  <circle cx="21" cy="6" r="4" fill="#6DD230" stroke="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_14_599">
+                    <rect width="25" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu messages py-0 pt-2"
+              onclick="event.stopPropagation()"
+            >
+              <i class="bi bi-triangle-fill"></i>
+              <li
+                class="oneMessage d-flex align-items-center gap-3 px-3 pt-2 read"
+              >
+                <img src="assets/Images/Img.png" alt="userImg" />
+                <div class="info">
+                  <p class="name">Sally Castro</p>
+                  <p class="messageContent">
+                    How many free autoresponders have
+                  </p>
                 </div>
-                <img src="assets/Images/Chat.png" alt="chat icon" class="navIcon" id="messageBtn">
-                <img src="assets/Images/bell.png" alt="bell icon" class="navIcon">
-                <img src="assets/Images/apps ico.png" alt="apps icon" class="navIcon d-md-block d-none">
-                <img src="assets/Images/User.png" alt="user icon" class="navIcon">
-            </div>
+              </li>
+              <li
+                class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read"
+              >
+                <img src="assets/Images/Img2.png" alt="userImg" />
+                <div class="info">
+                  <p class="name">Ada Mendez</p>
+                  <p class="messageContent">
+                    Another title for this article can be
+                  </p>
+                </div>
+              </li>
+              <li
+                class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 unread"
+              >
+                <img src="assets/Images/Img3.png" alt="userImg" />
+                <div class="info">
+                  <p class="name">Jeremiah Mann</p>
+                  <p class="messageContent">What makes one logo better than</p>
+                </div>
+              </li>
+              <li
+                class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read"
+              >
+                <img src="assets/Images/Img4.png" alt="userImg" />
+                <div class="info">
+                  <p class="name">Hulda Warner</p>
+                  <p class="messageContent">Adwords Keyword research</p>
+                </div>
+              </li>
+              <li
+                class="oneMessage d-flex align-items-center gap-3 px-3 mt-3 read"
+              >
+                <img src="assets/Images/Img5.png" alt="userImg" />
+                <div class="info">
+                  <p class="name">Barry Armstrong</p>
+                  <p class="messageContent">
+                    I have been questioned many people
+                  </p>
+                </div>
+              </li>
+              <li class="mt-3 d-flex justify-content-center p-2 allMessages">
+                All Messages
+              </li>
+
+              <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+            </ul>
+          </div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="24"
+              viewBox="0 0 22 24"
+              fill="none"
+              class="navIcon"
+            >
+              <g clip-path="url(#clip0_89_359)">
+                <path
+                  d="M9.32422 4.24219C9.61068 3.95573 9.9401 3.8125 10.3125 3.8125C10.6849 3.8125 11 3.95573 11.2578 4.24219C11.5443 4.5 11.6875 4.8151 11.6875 5.1875C11.6875 5.1875 11.6875 5.24479 11.6875 5.35938C12.8906 5.67448 13.8789 6.34766 14.6523 7.37891C15.4258 8.41016 15.8125 9.57031 15.8125 10.8594V16.875C15.8125 17.3333 16.0417 17.5625 16.5 17.5625H17.1875V18.9375H12.2461C12.332 19.1667 12.375 19.3958 12.375 19.625C12.375 20.1979 12.1745 20.6849 11.7734 21.0859C11.3724 21.487 10.8854 21.6875 10.3125 21.6875C9.73958 21.6875 9.2526 21.487 8.85156 21.0859C8.45052 20.6849 8.25 20.1979 8.25 19.625C8.25 19.3958 8.29297 19.1667 8.37891 18.9375H3.4375V17.5625H4.125C4.58333 17.5625 4.8125 17.3333 4.8125 16.875V10.6875C4.8125 9.42708 5.19922 8.3099 5.97266 7.33594C6.77474 6.33333 7.76302 5.67448 8.9375 5.35938C8.9375 5.24479 8.9375 5.1875 8.9375 5.1875C8.9375 4.8151 9.06641 4.5 9.32422 4.24219ZM10.0117 6.5625C8.92318 6.64844 8.00651 7.09245 7.26172 7.89453C6.54557 8.66797 6.1875 9.59896 6.1875 10.6875V16.875C6.1875 17.1042 6.14453 17.3333 6.05859 17.5625H14.5664C14.4805 17.3333 14.4375 17.1042 14.4375 16.875V10.8594C14.4375 9.71354 14.0508 8.72526 13.2773 7.89453C12.5039 7.03516 11.5586 6.59115 10.4414 6.5625H10.3125H10.1406H10.0117ZM11 19.625C11 19.1667 10.7708 18.9375 10.3125 18.9375C9.85417 18.9375 9.625 19.1667 9.625 19.625C9.625 20.0833 9.85417 20.3125 10.3125 20.3125C10.7708 20.3125 11 20.0833 11 19.625Z"
+                  fill="#778CA2"
+                />
+                <circle cx="17" cy="6" r="4" fill="#FE4D97" stroke="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_89_359">
+                  <rect width="22" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              class="navIcon d-lg-block d-none"
+            >
+              <path
+                d="M0.4375 0.1875H1.125H14.875H15.5625V0.875V14.625V15.3125H14.875H1.125H0.4375V14.625V0.875V0.1875ZM1.8125 1.5625V7.0625H7.3125V1.5625H1.8125ZM8.6875 1.5625V7.0625H14.1875V1.5625H8.6875ZM1.8125 8.4375V13.9375H7.3125V8.4375H1.8125ZM8.6875 8.4375V13.9375H14.1875V8.4375H8.6875Z"
+                fill="#778CA2"
+              />
+            </svg>
+          </a>
+          <a href="#">
+            <img src="assets/Images/User.png" alt="user icon" class="navIcon" />
+          </a>
         </div>
-        <footer class="bg-white p-3 w-100 d-flex justify-content-between align-items-center">
-            <p>© 2018 WhiteOnWhite - All Rights Reserved.</p>
-            <p class="d-md-block d-none"> About WhiteOnWhite </p>
-        </footer>
+      </div>
+      <div class="tasksSection p-3">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste
+          quibusdam hic nobis, atque dolore ipsa facilis rem molestiae,
+          doloremque, illo provident omnis cum tempora! Voluptatem doloremque
+          necessitatibus eum nam expedita.
+        </p>
+      </div>
+      <footer
+        class="bg-white p-3 d-flex justify-content-md-between justify-content-center align-items-center"
+      >
+        <p class="text-md-start text-center">
+          © 2018 WhiteOnWhite - All Rights Reserved.
+        </p>
+        <p class="d-lg-block d-none">About WhiteOnWhite</p>
+      </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="Index.js"></script>
-</body>
+  </body>
 </html>

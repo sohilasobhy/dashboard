@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Rubik", serif;
+  font-family: "Rubik";
   src: url("../Fonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
 * {
@@ -30,14 +30,29 @@ body .mainMenu {
   min-height: 100vh;
   border-right: 1px #e8ecef solid;
   transition: 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 body .mainMenu .nav-link {
   cursor: pointer;
   padding: 1.5rem !important;
 }
+body .mainMenu .nav-link svg path {
+  fill: #778ca2;
+}
 body .mainMenu .nav-link.active {
   background-color: #f8fafb;
-  border-left: 2px solid #4d7cfe;
+  border-left: 2px solid #5784fd;
+}
+body .mainMenu .nav-link.active svg path {
+  fill: #5784fd;
+}
+body .mainMenu .nav-link:hover {
+  background-color: #f8fafb;
+}
+body .mainMenu .nav-link:hover svg path {
+  fill: #5784fd;
 }
 body .mainMenu .nav-link p {
   color: #778ca2;
@@ -74,78 +89,104 @@ body .mainMenu.sideMenuClose {
 body .mainMenu.sideMenuClose .oneItem {
   gap: 2.5rem;
 }
+body .mainMenu.sideMenuClose .oneItem p {
+  display: none;
+}
 body .mainMenu.sideMenuClose .logo .logo-lg {
   display: none;
 }
 body .navIcon {
   cursor: pointer;
 }
-body .sideNav {
-  border-bottom: 1px #e8ecef solid;
+body .rightPart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
 }
-body .sideNav p {
+body .rightPart.sideNavOpen {
+  width: calc(100% - 230px);
+}
+body .rightPart.sideNavClose {
+  width: calc(100% - 70px);
+}
+body .rightPart .sideNav {
+  border-bottom: 1px #e8ecef solid;
+  height: 10vh;
+}
+body .rightPart .sideNav p {
   color: #252631;
   font-size: 20px;
   font-weight: 400;
 }
-body .sideNav .inputCon input {
+body .rightPart .sideNav button {
+  border: 0;
+  background-color: transparent;
+}
+body .rightPart .sideNav button:focus {
+  border: 0;
+}
+body .rightPart .sideNav button::after {
+  display: none;
+}
+body .rightPart .sideNav .inputCon input {
   background-color: transparent;
   border: none;
 }
-body .sideNav .inputCon input::-moz-placeholder {
+body .rightPart .sideNav .inputCon input::-moz-placeholder {
   color: #778ca2;
   font-size: 14px;
   font-weight: 400;
 }
-body .sideNav .inputCon input::placeholder {
+body .rightPart .sideNav .inputCon input::placeholder {
   color: #778ca2;
   font-size: 14px;
   font-weight: 400;
 }
-body .sideNav .inputCon img {
+body .rightPart .sideNav .inputCon input:focus {
+  outline: 0;
+}
+body .rightPart .sideNav .inputCon img {
   position: absolute;
   top: 16%;
   left: 12px;
 }
-body .messages {
+body .rightPart .messages {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  position: absolute;
-  top: 10.5%;
+  border: 0;
+  inset: 27px -15px auto auto !important;
 }
 @media (min-width: 992px) {
-  body .messages {
-    right: 125px;
+  body .rightPart .messages {
     width: 320px;
   }
 }
 @media (max-width: 991.86px) and (min-width: 768px) {
-  body .messages {
-    right: 120px;
+  body .rightPart .messages {
     width: 300px;
   }
 }
 @media (max-width: 768px) {
-  body .messages {
-    right: 95px;
+  body .rightPart .messages {
     width: 250px;
   }
 }
-body .messages i {
+body .rightPart .messages i {
   color: white;
   font-size: 35px;
   position: absolute;
   top: -8%;
   right: 4%;
 }
-body .messages .oneMessage {
+body .rightPart .messages .oneMessage {
   cursor: pointer;
 }
-body .messages .oneMessage .name {
+body .rightPart .messages .oneMessage .name {
   font-size: 14px;
   font-weight: 400;
 }
-body .messages .oneMessage .messageContent {
+body .rightPart .messages .oneMessage .messageContent {
   color: #98a9bc;
   font-size: 14px;
   font-weight: 400;
@@ -155,38 +196,41 @@ body .messages .oneMessage .messageContent {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body .messages .oneMessage img {
+body .rightPart .messages .oneMessage img {
   width: 35px;
   height: 35px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
 }
-body .messages .oneMessage.read .name {
+body .rightPart .messages .oneMessage.read .name {
   color: #1b1e24;
   font-size: 14px;
   font-weight: 400;
 }
-body .messages .oneMessage.unread {
+body .rightPart .messages .oneMessage.unread, body .rightPart .messages .oneMessage:hover {
   background-color: #f8fafb;
 }
-body .messages .oneMessage.unread .name {
-  color: #4d7cfe;
+body .rightPart .messages .oneMessage.unread .name, body .rightPart .messages .oneMessage:hover .name {
+  color: #5784fd;
   font-size: 14px;
   font-weight: 400;
 }
-body .messages .allMessages {
+body .rightPart .messages .allMessages {
   color: #5784fd;
   background-color: #f8fafb;
   border-radius: 10px;
   cursor: pointer;
 }
-body footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+body .rightPart .tasksSection {
+  height: 83vh;
+  overflow-y: scroll;
 }
-body footer p {
+body .rightPart footer {
+  width: 100%;
+  height: 7vh;
+}
+body .rightPart footer p {
   color: #98a9bc;
   font-size: 14px;
   font-weight: 400;
