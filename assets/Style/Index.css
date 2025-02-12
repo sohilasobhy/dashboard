@@ -50,25 +50,25 @@ body .mainMenu {
   border-right: 1px #e8ecef solid;
   transition: 0.5s;
   width: 230px;
+  padding: 20.5px 0;
+}
+body .mainMenu .logo {
+  height: 10vh;
+}
+@media (max-width: 992px) {
+  body .mainMenu .logo {
+    padding: 0 1.5rem;
+  }
 }
 body .mainMenu .logo i {
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
 }
-@media (min-width: 993px) {
-  body .mainMenu .logo {
-    padding: 20.5px 0;
-  }
-}
-@media (max-width: 992px) {
-  body .mainMenu .logo {
-    padding: 15px 0;
-  }
-}
 body .mainMenu .nav-link {
   cursor: pointer;
   padding: 1.5rem !important;
+  border-left: 2px solid transparent;
 }
 body .mainMenu .nav-link svg path {
   fill: #778ca2;
