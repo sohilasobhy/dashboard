@@ -24,11 +24,41 @@ ul {
 body {
   font-family: "Rubik", serif;
   background-color: $primary-color;
+  &.Open {
+    .filter {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.623);
+      z-index: 1;
+      top: 0;
+      transition: 0.5s;
+      @media (min-width: 993px) {
+        left: -100%;
+      }
+      @media (max-width: 992px) {
+        left: 0;
+      }
+    }
+  }
   .mainMenu {
-    min-height: 100vh;
+    height: 100vh;
     border-right: 1px $border-color solid;
     transition: 0.5s;
-    @include position(fixed, 0, null, null, 0);
+    width: 230px;
+    .logo {
+      i {
+        font-size: 20px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      @media (min-width: 993px) {
+        padding: 20.5px 0;
+      }
+      @media (max-width: 992px) {
+        padding: 15px 0;
+      }
+    }
     .nav-link {
       cursor: pointer;
       padding: 1.5rem !important;
@@ -37,17 +67,10 @@ body {
           fill: #778ca2;
         }
       }
-      &.active {
-        background-color: $primary-color;
-        border-left: 2px solid $prim-text-color;
-        svg {
-          path {
-            fill: $prim-text-color;
-          }
-        }
-      }
+      &.active,
       &:hover {
         background-color: $primary-color;
+        border-left: 2px solid $prim-text-color;
         svg {
           path {
             fill: $prim-text-color;
@@ -68,7 +91,6 @@ body {
       }
     }
     &.sideMenu {
-      width: 230px;
       .oneItem {
         gap: 1rem;
       }
@@ -77,12 +99,16 @@ body {
           display: none;
         }
       }
+      @media (max-width: 992px) {
+        position: fixed;
+        left: 0;
+        z-index: 2;
+      }
     }
     &.sideMenuClose {
       width: 70px;
       overflow: hidden;
       .oneItem {
-        gap: 2.5rem;
         p {
           display: none;
         }
@@ -92,19 +118,33 @@ body {
           display: none;
         }
       }
+      @media (max-width: 992px) {
+        // display: none;
+        position: fixed;
+        left: -100%;
+      }
     }
   }
   .navIcon {
     cursor: pointer;
   }
   .rightPart {
-    @include position(absolute, 0, 0, null, null);
     transition: 0.5s;
     &.sideNavOpen {
-      width: calc(100% - 230px);
+      @media (min-width: 993px) {
+        width: calc(100% - 230px);
+      }
+      @media (max-width: 992px) {
+        width: 100%;
+      }
     }
     &.sideNavClose {
-      width: calc(100% - 70px);
+      @media (min-width: 993px) {
+        width: calc(100% - 70px);
+      }
+      @media (max-width: 992px) {
+        width: 100%;
+      }
     }
     .sideNav {
       border-bottom: 1px $border-color solid;
@@ -198,7 +238,7 @@ body {
     }
     .tasksSection {
       height: 83vh;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
     footer {
       width: 100%;

@@ -26,13 +26,45 @@ body {
   font-family: "Rubik", serif;
   background-color: #f8fafb;
 }
+body.Open .filter {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.623);
+  z-index: 1;
+  top: 0;
+  transition: 0.5s;
+}
+@media (min-width: 993px) {
+  body.Open .filter {
+    left: -100%;
+  }
+}
+@media (max-width: 992px) {
+  body.Open .filter {
+    left: 0;
+  }
+}
 body .mainMenu {
-  min-height: 100vh;
+  height: 100vh;
   border-right: 1px #e8ecef solid;
   transition: 0.5s;
-  position: fixed;
-  top: 0;
-  left: 0;
+  width: 230px;
+}
+body .mainMenu .logo i {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+@media (min-width: 993px) {
+  body .mainMenu .logo {
+    padding: 20.5px 0;
+  }
+}
+@media (max-width: 992px) {
+  body .mainMenu .logo {
+    padding: 15px 0;
+  }
 }
 body .mainMenu .nav-link {
   cursor: pointer;
@@ -41,17 +73,11 @@ body .mainMenu .nav-link {
 body .mainMenu .nav-link svg path {
   fill: #778ca2;
 }
-body .mainMenu .nav-link.active {
+body .mainMenu .nav-link.active, body .mainMenu .nav-link:hover {
   background-color: #f8fafb;
   border-left: 2px solid #5784fd;
 }
-body .mainMenu .nav-link.active svg path {
-  fill: #5784fd;
-}
-body .mainMenu .nav-link:hover {
-  background-color: #f8fafb;
-}
-body .mainMenu .nav-link:hover svg path {
+body .mainMenu .nav-link.active svg path, body .mainMenu .nav-link:hover svg path {
   fill: #5784fd;
 }
 body .mainMenu .nav-link p {
@@ -73,21 +99,22 @@ body .mainMenu .nav-link p {
     font-size: 10px;
   }
 }
-body .mainMenu.sideMenu {
-  width: 230px;
-}
 body .mainMenu.sideMenu .oneItem {
   gap: 1rem;
 }
 body .mainMenu.sideMenu .logo .logo-sm {
   display: none;
 }
+@media (max-width: 992px) {
+  body .mainMenu.sideMenu {
+    position: fixed;
+    left: 0;
+    z-index: 2;
+  }
+}
 body .mainMenu.sideMenuClose {
   width: 70px;
   overflow: hidden;
-}
-body .mainMenu.sideMenuClose .oneItem {
-  gap: 2.5rem;
 }
 body .mainMenu.sideMenuClose .oneItem p {
   display: none;
@@ -95,20 +122,37 @@ body .mainMenu.sideMenuClose .oneItem p {
 body .mainMenu.sideMenuClose .logo .logo-lg {
   display: none;
 }
+@media (max-width: 992px) {
+  body .mainMenu.sideMenuClose {
+    position: fixed;
+    left: -100%;
+  }
+}
 body .navIcon {
   cursor: pointer;
 }
 body .rightPart {
-  position: absolute;
-  top: 0;
-  right: 0;
   transition: 0.5s;
 }
-body .rightPart.sideNavOpen {
-  width: calc(100% - 230px);
+@media (min-width: 993px) {
+  body .rightPart.sideNavOpen {
+    width: calc(100% - 230px);
+  }
 }
-body .rightPart.sideNavClose {
-  width: calc(100% - 70px);
+@media (max-width: 992px) {
+  body .rightPart.sideNavOpen {
+    width: 100%;
+  }
+}
+@media (min-width: 993px) {
+  body .rightPart.sideNavClose {
+    width: calc(100% - 70px);
+  }
+}
+@media (max-width: 992px) {
+  body .rightPart.sideNavClose {
+    width: 100%;
+  }
 }
 body .rightPart .sideNav {
   border-bottom: 1px #e8ecef solid;
@@ -224,7 +268,7 @@ body .rightPart .messages .allMessages {
 }
 body .rightPart .tasksSection {
   height: 83vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 body .rightPart footer {
   width: 100%;
